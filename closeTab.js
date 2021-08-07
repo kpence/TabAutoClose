@@ -6,7 +6,7 @@ function checkAndCloseTab(tabId, changeInfo, tab) {
     console.log(result);
     var patt = new RegExp(result.title_regex);
     if (result.title_regex && result.title_regex.length > 0 && tab && patt.test(tab.title)) {
-      chrome.tabs.remove(tabId);
+      setTimeout(function(){ chrome.tabs.remove(tabId); }, 300);
     }
   }
 }
